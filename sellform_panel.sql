@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2025 at 06:55 PM
+-- Generation Time: Apr 11, 2025 at 07:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,9 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `sellform_panel` (
-  `sell_id` int(10) DEFAULT NULL,
   `username` varchar(30) NOT NULL,
-  `orderdate` int(11) NOT NULL,
   `id` int(10) NOT NULL,
   `meter` int(10) NOT NULL,
   `ghymat` int(20) NOT NULL,
@@ -44,9 +42,30 @@ CREATE TABLE `sellform_panel` (
 -- Dumping data for table `sellform_panel`
 --
 
-INSERT INTO `sellform_panel` (`sell_id`, `username`, `orderdate`, `id`, `meter`, `ghymat`, `mobile`, `address`, `email`, `carpet_name`) VALUES
-(NULL, 'علی پیرمردایان', 0, 0, 100, 15000000, 2147483647, 'شیراز', 'amiam5311@gmail.com', 'پونه'),
-(NULL, '', 0, 0, 0, 0, 0, '', '', '');
+INSERT INTO `sellform_panel` (`username`, `id`, `meter`, `ghymat`, `mobile`, `address`, `email`, `carpet_name`) VALUES
+('علی پیرمردایان', 1, 100, 15000000, 2147483647, 'شیراز', 'amiam5311@gmail.com', 'پونه'),
+('', 2, 0, 0, 0, '', '', ''),
+('حسام فروغی', 3, 100, 0, 2147483647, 'اصفهان', 'amiam5311@gmail.com', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `sellform_panel`
+--
+ALTER TABLE `sellform_panel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `sellform_panel`
+--
+ALTER TABLE `sellform_panel`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
