@@ -4,7 +4,7 @@ include("tag_a.php")
 <?php
 $id = $_SESSION["id"];
 include("connect.php");
-$b = mysqli_query($a, "SELECT * FROM `sellform_panel` WHERE `id`='$id'");
+$b = mysqli_query($a, "SELECT * FROM `sellform_panel` WHERE `idk`='$id'");
 mysqli_close($a); 
 ?>
 

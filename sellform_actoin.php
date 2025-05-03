@@ -24,9 +24,10 @@ $meter=$_POST["meter"];
 $mobile=$_POST["mobile"];
 $address=$_POST["address"];
 $email=$_POST["email"];
+$idk=$_SESSION["id"];
 include("connect.php");
 
-$b=mysqli_query($a,"INSERT INTO `sellform_panel`(`username`, `meter` ,`ghymat`,`mobile`,`address`,`email`,`carpet_name`,`id`) VALUES ('$username','$meter','$ghymat','$mobile','$address','$email','$name','$id')");
+$b=mysqli_query($a,"INSERT INTO `sellform_panel`(`username`, `meter` ,`ghymat`,`mobile`,`address`,`email`,`carpet_name`,`id`,`idk`) VALUES ('$username','$meter','$ghymat','$mobile','$address','$email','$name','$id','$idk')");
 mysqli_close($a);
 ?>
 

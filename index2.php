@@ -18,7 +18,7 @@ $row=mysqli_fetch_array($b);
               
   <td class="td01" > 
     <a href="product_detail.php?id=<?php echo($row["id"]);?>">
-      <img src="<?php echo($row["imageurl"]); ?>" class="img-fluid img-thumbnail">
+      <img src="<?php echo($row["imageurl"]); ?>"  class="img-fluid img-thumbnail">
     </a>
     <h4>  <?php echo($row["name"]);?></h4>
 </td>

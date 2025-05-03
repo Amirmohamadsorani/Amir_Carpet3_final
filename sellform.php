@@ -2,10 +2,11 @@
 include("tag_a.php")
 ?>
 <?php
-if (!isset($_SESSION["id"])) {
+if(isset($_SESSION["login"]) && $_SESSION["login"]==true){ 
+}else{
   header("Location: login.php");
   exit(); 
-  }
+}
 $id=$_GET["id"];
 include("connect.php");
 
