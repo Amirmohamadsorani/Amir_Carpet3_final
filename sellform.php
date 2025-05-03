@@ -2,8 +2,13 @@
 include("tag_a.php")
 ?>
 <?php
+if (!isset($_SESSION["id"])) {
+  header("Location: login.php");
+  exit(); 
+  }
 $id=$_GET["id"];
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
+
 $b=mysqli_query($a,"SELECT * FROM `mahsol` WHERE `id`=$id;");
 mysqli_close($a);
 $row=mysqli_fetch_array($b);
@@ -16,11 +21,11 @@ $row=mysqli_fetch_array($b);
 <form class="row g-3">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">نام موکت</label>
-    <input type="text" class="form-control" id="inputPassword4" name="carpet_name" value= <?php echo($row["name"]);?> disabled >
+    <input type="text" class="form-control" id="inputPassword4"  value= <?php echo($row["name"]);?> name="name" readonly >
   </div>
   <div class="col-md-4">
     <label for="inputState" class="form-label">قیمت محصول</label>
-    <input type="text" class="form-control" id="inputCity" name="ghymat" value= <?php echo($row["ghymat"]);?> disabled>  
+    <input type="text" class="form-control" id="inputCity" value= <?php echo($row["ghymat"]);?> name="ghymat"  readonly>  
   </div>
   <?php
   $row=mysqli_fetch_array($b);
@@ -47,12 +52,6 @@ $row=mysqli_fetch_array($b);
     <input type="text" class="form-control" id="inputEmail4" name="email">
   </div>
   <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        انتخاب من را به خاطر بسپار
-      </label>
-    </div>
   </div>
 </br>
   <div class="col-12">

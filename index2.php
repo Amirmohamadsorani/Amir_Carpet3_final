@@ -4,7 +4,7 @@ include("tag_a.php")
 ?>
 <div class="bg-light text-dark pt-4 animate__animated animate__fadeInUp">
 <?php
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
 $b=mysqli_query($a,"SELECT * FROM `mahsol`");
 mysqli_close($a);
 ?>

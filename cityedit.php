@@ -3,7 +3,8 @@ include("tag_a.php");
 ?>
 <?php
 $id=$_GET["id"];
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
+
 $b=mysqli_query($a,"SELECT * FROM `mahsol` WHERE `id`=$id");
 mysqli_close($a);
 $row=mysqli_fetch_array($b);

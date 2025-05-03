@@ -1,7 +1,8 @@
 
 <?php
 include("tag_a.php")
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
+
 $b=mysqli_query($a,"SELECT * FROM `mahsol`");
 mysqli_close($a);
 ?>

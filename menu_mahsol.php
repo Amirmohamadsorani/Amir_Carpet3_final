@@ -14,52 +14,54 @@ include("tag_a.php")
                         <h2 class='alert alert-success'  role='alert'>لیست محصولات</h2>
                         <hr class="divider" />
                         <?php
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
 $b=mysqli_query($a,"SELECT * FROM `mahsol`");
 mysqli_close($a);
 ?>
-   <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">کد </th>
-      <th scope="col">اسم</th>
-      <th scope="col">قیمت</th>
-      <th scope="col">تصویر </th>
-      <th scope="col">مدیریت </th>
-    </tr>
-  </thead>
+<div class="table">
+
 
             <?php
             $row=mysqli_fetch_array($b);
             while($row)
             {
                 ?>
-                  <tbody>
-           <div>         
-    <tr>
-      <th scope="row"><span> <?php echo($row["id"]);  ?> </span></th>
-      <td><span>  <?php echo($row["name"]);  ?> </span></td>
-      <td><span>  <?php echo($row["ghymat"]);  ?> </span></td>
-      
-   <td> <img src="<?php echo($row["imageurl"]); ?>" class="figure-img img-fluid rounded" class="rounded mx-auto d-block" alt="..."></td>
-  
-   <td>
-      <button class="btn btn-outline-secondary"><a class="lk" href="cityedit.php?id=<?php echo($row["id"]); ?>" id="n2">edit</a></button>
-      <button class="btn btn-outline-secondary"><a class="lk" href="citydelete.php?id=<?php echo($row["id"]); ?>" id="n1">delete</a></button>
-    </td>
+                   
+     </td>
     </tr>
+  </div>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-13">
+        <img src="<?php echo($row["imageurl"]); ?>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"> <?php echo($row["name"]);  ?></h5>
+          <p class="card-text"><?php echo($row["explane"]);  ?></p>
+          <p class="card-text"><small class="text-body-secondary"><?php echo($row["ghymat"]);  ?> </small></p>
+          <button class="btn btn-outline-secondary"><a class="lk" href="cityedit.php?id=<?php echo($row["id"]); ?>" id="n2">edit</a></button>
+          <button class="btn btn-outline-secondary"><a class="lk" href="citydelete.php?id=<?php echo($row["id"]); ?>" id="n1">delete</a></button>
+        </div>
+      </div>
     </div>
-            <?php
-             $row=mysqli_fetch_array($b);
+    
+    </div>
+    <?php
+    $row=mysqli_fetch_array($b);
             }
             ?>
-                    </tbody>
-                    </table>
+    </div>
+    </div>
+    </div>
+  </div>
     </div>
 </div>
 </div>
                 </div>
             </div>
+</div>
 </div>
 <?php
 include("footer2.html");

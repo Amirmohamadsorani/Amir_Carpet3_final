@@ -1,22 +1,36 @@
 <?php
 include("tag_a.php")
-?> 
-<header class="bg-light text-dark pt-4 animate__animated animate__fadeInUp" class="col-md5 text-center"  class="masthead">
-    
-            <div class=" animate__animated animate__fadeInLeft animate__delay-0.5s" class="container px-4 px-lg-5">
+?>
+
+<div class="bg-light text-dark pt-4 animate__animated animate__fadeInUp" class="form-floating mb-3">
+                          <?php
+                          if (isset($_GET['msg'])): 
+                          ?>
+                          <div class="alert alert-<?php echo ($_GET['msg'] == 'success' ? 'success' : 'danger'  );?> text-center" role="alert" class="animate__animated animate__fadeInLeft animate__delay-0.5s">
+                         
+                          </br>
+                          </br>
+
+
+                          
+                          
+                          <?php 
+                          echo ($_GET['msg'] == 'success' ?  'سفارش شما با موفقیت ثبت شد' : 'لطفا تمام ردیف ها رو به درستی و کامل پر کنید'); 
+                          ?>
+                        </div>
+            </div>
+            <?php 
+                 endif; 
+                 ?>
+                                  <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6 text-center"></br>
-                    </br>
-                        <h2 class='alert alert-success' role='alert'>سفارش شما با موفقیت ثبت شد</h2>
+                    <div class="col-lg-8 col-xl-6 text-center">
                         <hr class="divider" />
                         <a class="btn btn-primary btn-xl" href="index2.php">بازگشت به صفحه اصلی</a>
-                        </br>
-                        </br>
                     </div>
                 </div>
             </div>
-        </header>
-        <?php
+<?php
 include("footer2.html");
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

@@ -2,16 +2,31 @@
 include("tag_a.php")
 ?>
 <?php
-$id=$_POST["id"];
-$carpet_name=$_POST["carpet_name"];
+if (
+    isset($_POST["username"], $_POST["meter"], $_POST["mobile"], $_POST["address"], $_POST["email"]) &&
+    !empty($_POST["username"]) &&
+    !empty($_POST["meter"]) &&
+    !empty($_POST["mobile"]) &&
+    !empty($_POST["address"]) &&
+    !empty($_POST["email"])
+) {
+    header("Location: header4.php?msg=success");
+} else {
+    header("Location: header4.php?msg=error");
+    exit;
+}
+?>
+<?php
+$name=$_POST["name"];
+$ghymat=$_POST["ghymat"];
 $username=$_POST["username"];
 $meter=$_POST["meter"];
-$ghymat=$_POST["ghymat"];
 $mobile=$_POST["mobile"];
 $address=$_POST["address"];
 $email=$_POST["email"];
-$a=mysqli_connect("localhost","root","","amir");
-$b=mysqli_query($a,"INSERT INTO `sellform_panel`(`username`, `meter` ,`ghymat`,`mobile`,`address`,`email`,`carpet_name`,`id`) VALUES ('$username','$meter','$ghymat','$mobile','$address','$email','$carpet_name','$id')");
+include("connect.php");
+
+$b=mysqli_query($a,"INSERT INTO `sellform_panel`(`username`, `meter` ,`ghymat`,`mobile`,`address`,`email`,`carpet_name`,`id`) VALUES ('$username','$meter','$ghymat','$mobile','$address','$email','$name','$id')");
 mysqli_close($a);
 ?>
 

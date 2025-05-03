@@ -32,11 +32,12 @@ if($upload==false)
     $flagsaveok=false;
     $massege.="در اپلود فایل مشکلی پیش امده است";
 }
-$a=mysqli_connect("localhost","root","","amir");
+include("connect.php");
+
 $b=mysqli_query($a,"INSERT INTO `mahsol`(`id`, `name`, `ghymat`, `imageurl` ,`explane` ) VALUES ('$id','$name','$ghymat','$imageurl','$explane')");
 mysqli_close($a);
 ?>
-<?php
+<?php 
 if($b===true)
 {
  ?>
