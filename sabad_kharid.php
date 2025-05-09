@@ -7,22 +7,12 @@ include("connect.php");
 $b = mysqli_query($a, "SELECT * FROM `sellform_panel` WHERE `idk`='$id'");
 mysqli_close($a); 
 ?>
-
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سبد خرید</title>
-</head>
-<body>
-
 <div class="row">
     <div class="container px-4 px-lg-5">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center"></br>
-                    <h2 class='alert alert-success' role='alert'>لیست خریداران</h2>
+                    <h2 class='alert alert-success' role='alert'>سبد خرید</h2>
                     <hr class="divider"/>
                 </div>
 
@@ -36,7 +26,7 @@ mysqli_close($a);
       <div class="cell"> شماره تماس</div>
       <div class="cell"> آدرس</div>
       <div class="cell">ایمیل </div>
-      <div class="cell">کد محصول </div>
+      <div class="cell"> قیمت کل </div>
     
 
             <?php
@@ -51,7 +41,7 @@ mysqli_close($a);
   <div class="cell"><?php echo($row["mobile"]);  ?>  </div>
   <div class="cell"><?php echo($row["address"]);  ?> </div>
   <div class="cell"> <?php echo($row["email"]);  ?></div>
-  <div class="cell"><?php echo($row["id"]);  ?> </div>
+  <div class="cell"><?php echo($row["totalprice"]);  ?> </div>
             <?php
              $row=mysqli_fetch_array($b);
             }

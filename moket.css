@@ -141,7 +141,7 @@ b{
     margin-bottom: 50px;
 }
 .button2{
-    background-color: #1a5942;
+    background-color: #1a6ba1;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -295,4 +295,6 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         padding: 10px;
         border: 1px solid #ccc;
       }
-  
+  .card-title{
+text-align: center;
+  }

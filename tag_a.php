@@ -39,18 +39,23 @@
                         </li>
                     <?php } ?>
                     <li class="nav-item">
-                        <a class="nav-link " href="index2.php"> بازگشت به صفحه اصلی </a>
+                        <a class="nav-link " href="index2.php">   صفحه اصلی </a>
                     </li>
+                    <li class="nav-item">
+                            <a class="nav-link " href="about.php"> درباره ما </a>
+                        </li>
                     <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true){ ?>
                         <li class="nav-item">
                             <a class="nav-link " href="citynew.php">محصول جدید</a>
                         </li>
+ 
                     <?php } ?>
                     <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"]==true){ ?>
                         <li class="nav-item"><a class="nav-link " href="menu_mahsol.php">مدیریت </a></li>
                         <li class="nav-item">
                             <a class="nav-link " href="sellform_panel.php"> مشخصات محصولات فروخته شده </a>
                         </li>
+
                     <?php } ?>
                 </ul>
             </div>

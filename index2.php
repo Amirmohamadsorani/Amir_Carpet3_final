@@ -11,13 +11,14 @@ mysqli_close($a);
 <table class="table" class=" animate__animated animate__fadeInLeft animate__delay-1s">
   <?php
   $counter = 0;
-$row=mysqli_fetch_array($b);
-            while($row)
-            {
-              $counter++; ?>
+  $row=mysqli_fetch_array($b);
+  while($row)
+  {
+    $counter++; ?>
               
-  <td class="td01" > 
-    <a href="product_detail.php?id=<?php echo($row["id"]);?>">
+              <td class="td01" > 
+                <a href="product_detail.php?id=<?php echo($row["id"]);?>">
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
       <img src="<?php echo($row["imageurl"]); ?>"  class="img-fluid img-thumbnail">
     </a>
     <h4>  <?php echo($row["name"]);?></h4>
@@ -35,6 +36,7 @@ $row=mysqli_fetch_array($b);
             ?>
                    
                   </table>
+                </div>
                 </div>
                     
 

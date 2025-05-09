@@ -4,7 +4,7 @@ unset($_SESSION["login"]);
 unset($_SESSION["admin"]);
     ?>
     <script>
-        location.replace("index.php");
+        location.replace("index2.php");
     </script>
     <?php
 

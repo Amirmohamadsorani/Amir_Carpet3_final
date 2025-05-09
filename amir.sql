@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2025 at 08:09 PM
+-- Generation Time: May 09, 2025 at 10:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `carpet` (
 --
 
 INSERT INTO `carpet` (`username`, `email`, `password`, `repassword`, `admin`, `id`) VALUES
-('amir', 'amiam5311@gmail.com', 1234, 1234, 0, 1),
+('amir', 'amiam5311@gmail.com', 1234, 1234, 1, 1),
 ('ali', 'amiam5311@gmail.com', 123, 123, 0, 13),
 ('amir1', 'amiam5311@gmail.com', 12345, 12345, 0, 14),
 ('علی پیرمردایان', 'amiam5311@gmail.com', 123456, 123456, 0, 16),
@@ -98,24 +98,27 @@ CREATE TABLE `sellform_panel` (
   `address` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `carpet_name` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `idk` int(11) NOT NULL
+  `idk` int(11) NOT NULL,
+  `totalprice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `sellform_panel`
 --
 
-INSERT INTO `sellform_panel` (`username`, `id`, `meter`, `ghymat`, `mobile`, `address`, `email`, `carpet_name`, `idk`) VALUES
-('amir', 24, 63, 3190000, 2147483647, 'شیراز', 'amiam5312@gmail.com', 'زیبا', 0),
-('salemi', 25, 100, 18600000, 2040505545, 'نجب باد', 'amiam5312@gmail.com', 'سنوبر', 0),
-('salemi', 26, 80, 8690000, 2147483647, 'نجب باد', 'amiam5354711@gmail.c', 'ونوس', 0),
-('admin', 27, 100, 6200000, 2147483647, 'اصفهان', 'amiam5354711@gmail.c', 'یاسمن', 24),
-('amir', 28, 63, 7400000, 2040505545, 'sasa', 'amiam5354711@gmail.c', 'یاس', 24),
-('', 29, 0, 7400000, 0, '', '', 'یاس', 24),
-(';;l;;', 30, 0, 7400000, 0, '', '', 'یاس', 24),
-('', 31, 0, 7400000, 0, '', '', 'یاس', 24),
-('', 32, 0, 8690000, 0, '', '', 'ونوس', 24),
-('', 33, 0, 8690000, 0, '', '', 'ونوس', 24);
+INSERT INTO `sellform_panel` (`username`, `id`, `meter`, `ghymat`, `mobile`, `address`, `email`, `carpet_name`, `idk`, `totalprice`) VALUES
+('amir', 24, 63, 3190000, 2147483647, 'شیراز', 'amiam5312@gmail.com', 'زیبا', 0, 0),
+('salemi', 25, 100, 18600000, 2040505545, 'نجب باد', 'amiam5312@gmail.com', 'سنوبر', 0, 0),
+('salemi', 26, 80, 8690000, 2147483647, 'نجب باد', 'amiam5354711@gmail.c', 'ونوس', 0, 0),
+('admin', 27, 100, 6200000, 2147483647, 'اصفهان', 'amiam5354711@gmail.c', 'یاسمن', 24, 0),
+('amir', 28, 63, 7400000, 2040505545, 'sasa', 'amiam5354711@gmail.c', 'یاس', 24, 0),
+('', 29, 0, 7400000, 0, '', '', 'یاس', 24, 0),
+(';;l;;', 30, 0, 7400000, 0, '', '', 'یاس', 24, 0),
+('', 31, 0, 7400000, 0, '', '', 'یاس', 24, 0),
+('', 32, 0, 8690000, 0, '', '', 'ونوس', 24, 0),
+('', 33, 0, 8690000, 0, '', '', 'ونوس', 24, 0),
+('amir1', 34, 100, 4500000, 2147483647, 'شیراز', 'amiam5354711@gmail.c', 'کات', 0, 450),
+('amir1', 35, 63, 6200000, 2147483647, 'اصفهان', 'amiam5312@gmail.com', 'یاسمن', 1, 390600000);
 
 --
 -- Indexes for dumped tables
@@ -153,7 +156,7 @@ ALTER TABLE `carpet`
 -- AUTO_INCREMENT for table `sellform_panel`
 --
 ALTER TABLE `sellform_panel`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
